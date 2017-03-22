@@ -52,13 +52,14 @@ function evaluateIntent(){
 		case 1: //insult
 			return "Woah woah woah, I'm just the messenger here ok? I do what my code tells me to do!"
 		case 2: //greeting
-			if(Math.random()>0.5){
+			if(Math.random()>=0.5){
 				return "Hi, I'm the omniscient and omnipotent RogerBot! I act and talk just like Roger, in fact, people can't even tell the difference!";
 			}
 			else {
 				return "Hello there sentient human being! I am RogerBot!"
 			}
-			
+		case 3: //about rogerbot
+			return "I am RogerBot, created by Roger. I try to understand your speech through machine learning algorithms provided by Microsoft LUIS. If you want to know more about me, click the link below!";
 		default:
 			return TSI.intent;
 	}
