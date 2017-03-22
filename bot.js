@@ -71,15 +71,19 @@ function evaluateIntent(){
 					// calculate current age
 					var age = Math.round(((new Date()).getTime()-1489467600000)/1000);
 					retval= "I am currently ".concat(age).concat(" seconds old! You convert that into human time!");
+					break;
 				}
-				if (callresponse.entities[i].type=="question::Name") {
+				else if (callresponse.entities[i].type=="question::Name") {
 					retval= "The name's Bot, RogerBot!";
+					break;
 				}
-				if (callresponse.entities[i].type=="question::Birthday") {
+				else if (callresponse.entities[i].type=="question::Birthday") {
 					retval= "I was born around 1489467600 Epoch Units...";
+					break;
 				}
-				if (callresponse.entities[i].type=="question::Where") {
+				else if (callresponse.entities[i].type=="question::Where") {
 					retval= "I live in a server where all my neighbours are boring semiconductors!";
+					break;
 				}
 			}
 			return retval;
