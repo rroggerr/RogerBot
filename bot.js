@@ -78,8 +78,6 @@ function evaluateIntent(){
 			if (callresponse.entities[i].type=="question::Birthday") {
 				    retval= "I was born around 1489467600 Epoch Units...";
 			    }
-			if 
-			}
 			return retval;
 		case 6: // jokes
 			var numJokes =3
