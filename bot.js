@@ -25,7 +25,7 @@ function sendQuery(){
 }
 
 function displayResponse(){
-	if (TSI.score<0.2){
+	if (TSI.score<0.2 || TSI.intent=="None"){
 		respText="I dunno :("
 	}
 	else {
