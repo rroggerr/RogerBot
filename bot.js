@@ -1,8 +1,12 @@
+// Housekeeping Stuff
+
 $(document).keypress(function (e) {
     if (e.which == 13) {
         sendQuery();
     }
 });
+
+document.geElementById("bot-form").addEventListener("submit",function(e){e.preventDefault; return false;};
 
 var apikey="90c98744cc3b4105874a08f6f4b9296e"; //programmer key
 var queryurl="https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/b81509fb-af34-41f9-90eb-0326bbeb3c30?subscription-key=90c98744cc3b4105874a08f6f4b9296e&verbose=true&q=";
@@ -11,6 +15,8 @@ var respText;
 var callresponse="";
 var TSI;
 var BIRTHDAY = 1489467600;
+
+//Send query code here
 
 function sendQuery(){
 	var query = document.getElementById("querytext").value;
