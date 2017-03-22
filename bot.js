@@ -60,12 +60,19 @@ function evaluateIntent(){
 				return "You gotta problem with me? Email my boss! Click the email link above!"
 			}
 		case 2: //greeting
+			var retval="";
 			if(Math.random()>=0.5){
-				return "Hi, I'm the omniscient and omnipotent RogerBot! I act and talk just like Roger, in fact, people can't even tell the difference!";
+				retval= "Hi, I'm the omniscient and omnipotent RogerBot! I act and talk just like Roger, in fact, people can't even tell the difference!";
 			}
 			else {
-				return "Hello there sentient human being! I am RogerBot!"
+				retval= "Hello there sentient human being! I am RogerBot!";
 			}
+			for (var i = 0; i < callresponse.entities.length; i++) {
+				if (callresponse.entities[i].type=="Names::Roger"){
+					retval="Hello! I am not Roger, I am the upgraded replacement of Roger!"
+				}
+			}
+			return retval;
 		case 3: //about rogerbot
 			var retval="I am RogerBot, created by Roger. I try to understand your speech through machine learning algorithms provided by Microsoft LUIS. If you want to know more about me, click the link below!";
 			for (var i = 0; i < callresponse.entities.length; i++) {
