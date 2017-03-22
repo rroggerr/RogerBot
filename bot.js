@@ -78,6 +78,9 @@ function evaluateIntent(){
 				if (callresponse.entities[i].type=="question::Birthday") {
 					retval= "I was born around 1489467600 Epoch Units...";
 				}
+				if (callresponse.entities[i].type=="question::Where") {
+					retval= "I live in a server where all my neighbours are boring semiconductors!";
+				}
 			}
 			return retval;
 		case 6: // jokes
