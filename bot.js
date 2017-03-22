@@ -10,6 +10,7 @@ var queryStr="";
 var respText;
 var callresponse="";
 var TSI;
+var BIRTHDAY = 1489467600;
 
 function sendQuery(){
 	var query = document.getElementById("querytext").value;
@@ -74,6 +75,10 @@ function evaluateIntent(){
 			    if (callresponse.entities[i].type=="question::Name") {
 				    retval= "The name's Bot, RogerBot!";
 			    }
+			if (callresponse.entities[i].type=="question::Birthday") {
+				    retval= "I was born around 1489467600 Epoch Units...";
+			    }
+			if 
 			}
 			return retval;
 		case 6: // jokes
