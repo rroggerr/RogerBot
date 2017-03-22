@@ -68,11 +68,11 @@ function evaluateIntent(){
 			for (var i = 0; i < callresponse.entities.length; i++) {
 			    if (callresponse.entities[i].type=="question::Age"){
 				    // calculate current age
-				    var age = Math.round((1489467600000-(new Date()).getTime())/1000);
+				    var age = Math.round(((new Date()).getTime()-1489467600000)/1000);
 				    retval= "I am currently ".concat(age).concat(" seconds old! You convert that into human time!");
 			    }
 				else if (callresponse.entities[i].type=="Names::Rogerbot") {
-				    retval= "I am currently ".concat(age).concat(" seconds old! You convert that into human time!");
+				    retval= "The name's Bot, RogerBot!";
 			    }
 			}
 			return retval;
