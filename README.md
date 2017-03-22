@@ -9,4 +9,4 @@ The recognization of user speech is powered by a machine learning cloud service 
 
 Check out my Javascript on GitHub if you want to learn more about it! The user interface is hosted on my undergrad school server http://www.student.cs.uwaterloo.ca/~rgeng/.
 
-* RogerBot does not collect any personal information so feel free to tell it anything
+* RogerBot does not collect any personal information
