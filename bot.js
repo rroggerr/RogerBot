@@ -50,7 +50,12 @@ function ajaxCall(){
 function evaluateIntent(){
 	switch(parseInt(TSI.intent)){
 		case 1: //insult
-			return "Woah woah woah, I'm just the messenger here ok? I do what my code tells me to do!"
+			if(Math.random()>=0.5){
+				return "Woah woah woah, I'm just the messenger here ok? I do what my code tells me to do!"
+			}
+			else {
+				return "You gotta problem with me? Email my boss! Click the email link above!"
+			}
 		case 2: //greeting
 			if(Math.random()>=0.5){
 				return "Hi, I'm the omniscient and omnipotent RogerBot! I act and talk just like Roger, in fact, people can't even tell the difference!";
