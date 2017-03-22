@@ -21,7 +21,7 @@ function sendQuery(){
 		document.getElementById("responsebox").innerHTML=respText;
 	}
 	else {
-		document.getElementById("responsebox").innerHTML="Do do do do dooooo...";
+		document.getElementById("responsebox").innerHTML="Do do do do dooooo (Thinking)...";
 		queryStr = queryurl.concat(query);
 		ajaxCall();
 	}
