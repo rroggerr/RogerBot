@@ -2,7 +2,7 @@
 
 $(document).keypress(function(e){if(e.which==13){sendQuery();}});
 
-document.getElementById("bot-form").addEventListener("submit",function(e){e.preventDefault; return false;});
+document.getElementById("bot-form").addEventListener("submit",sendQuery());
 
 var apikey="90c98744cc3b4105874a08f6f4b9296e"; //programmer key
 var queryurl="https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/b81509fb-af34-41f9-90eb-0326bbeb3c30?subscription-key=90c98744cc3b4105874a08f6f4b9296e&verbose=true&q=";
