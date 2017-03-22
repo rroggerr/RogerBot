@@ -1,6 +1,5 @@
 // Housekeeping Stuff
 window.onload = function(){
-	$(document).keypress(function(e){if(e.which==13){sendQuery();}});
 	document.getElementById("bot-form").addEventListener("submit",sendQuery);
 	document.getElementById("ask-wrapper").innerHTML="<div id=\"ask\" class=\"btn btn-block btn-success lilspace\" onclick=\"sendQuery()\">Ask</div>";
 }
