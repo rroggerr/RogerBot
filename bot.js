@@ -69,7 +69,7 @@ function evaluateIntent(){
 			}
 			for (var i = 0; i < callresponse.entities.length; i++) {
 				if (callresponse.entities[i].type=="Names::Roger"){
-					retval="Hello! I am not Roger, I am the upgraded replacement of Roger!"
+					retval="Hello! I am not Roger, I am the upgraded replacement of Roger. You shall refer to me as Rogerbot!"
 				}
 			}
 			return retval;
