@@ -96,6 +96,9 @@ function evaluateIntent(){
 				}
 			}
 			return retval;
+		case 5:
+			retval = "It is 68 C with a chance of thermal paste right here in the server! We'll be expecting cooler temperatures at night when the usage is lower!";
+			return retval;
 		case 6: // jokes
 			var numJokes =3
 			var index = Math.floor(Math.random()*10)
