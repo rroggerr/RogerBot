@@ -64,7 +64,18 @@ function evaluateIntent(){
 				return "Hello there sentient human being! I am RogerBot!"
 			}
 		case 3: //about rogerbot
-			return "I am RogerBot, created by Roger. I try to understand your speech through machine learning algorithms provided by Microsoft LUIS. If you want to know more about me, click the link below!";
+			var retval="I am RogerBot, created by Roger. I try to understand your speech through machine learning algorithms provided by Microsoft LUIS. If you want to know more about me, click the link below!";
+			for (var i = 0; i < callresponse.entities.length; i++) {
+			    if (callresponse.entities[i].type=="question::Age"){
+				    // calculate current age
+				    var age = Math.round((1489467600000-(new Date()).getTime())/1000);
+				    retval= "I am currently ".concat(age).concat(" seconds old! You convert that into human time!");
+			    }
+				else if (callresponse.entities[i].type=="Names::Rogerbot") {
+				    retval= "I am currently ".concat(age).concat(" seconds old! You convert that into human time!");
+			    }
+			}
+			return retval;
 		case 6: // jokes
 			var numJokes =3
 			var index = Math.floor(Math.random()*10)
