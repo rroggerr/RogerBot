@@ -1,10 +1,6 @@
 // Housekeeping Stuff
 
-$(document).keypress(function (e) {
-    if (e.which == 13) {
-        sendQuery();
-    }
-});
+$(document).keypress(function(e){if(e.which==13){sendQuery();}});
 
 document.geElementById("bot-form").addEventListener("submit",function(e){e.preventDefault; return false;});
 
