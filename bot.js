@@ -65,6 +65,19 @@ function evaluateIntent(){
 			}
 		case 3: //about rogerbot
 			return "I am RogerBot, created by Roger. I try to understand your speech through machine learning algorithms provided by Microsoft LUIS. If you want to know more about me, click the link below!";
+		case 6: // jokes
+			var numJokes =3
+			var index = Math.floor(Math.random()*10)
+			if (index%numJokes == 0){
+				return "Where is the worst place to play hide and seek in a hospital? In the I.C.U.!!! Geddit??? ICU!!! HAHAHAHA sorry...";
+			}
+			else if (index%numJokes == 1){
+				return "What kind of bagel can fly? A plane bagel!! AHAHAHAHA";
+			}
+			else { //(index%numJokes == 2)
+				return "Why do trees seem suspicious on sunny days? Because they're shady! AHAHAHAHA!!!! I'll stop...."
+			}
+				
 		default:
 			return TSI.intent;
 	}
