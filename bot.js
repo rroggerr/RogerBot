@@ -71,7 +71,7 @@ function evaluateIntent(){
 				    var age = Math.round(((new Date()).getTime()-1489467600000)/1000);
 				    retval= "I am currently ".concat(age).concat(" seconds old! You convert that into human time!");
 			    }
-			    if (callresponse.entities[i].type=="Names::Rogerbot") {
+			    if (callresponse.entities[i].type=="question::Name") {
 				    retval= "The name's Bot, RogerBot!";
 			    }
 			}
