@@ -14,7 +14,7 @@ var TSI;
 function sendQuery(){
 	var query = document.getElementById("querytext").value;
 	if (query==""){
-		respText=" ?? ¯\_(⊙︿⊙)_/¯ ??";
+		respText=" (⊙︿⊙)_/¯ ?? ";
 		document.getElementById("responsebox").innerHTML=respText;
 	}
 	else {
