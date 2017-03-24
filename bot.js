@@ -114,18 +114,31 @@ function evaluateIntent(){
 			}
 			return retval;
 		case 6: // jokes
-			var numJokes =3
-			var index = Math.floor(Math.random()*10)
-			if (index%numJokes == 0){
+			var numResponses =3;
+			var index = Math.floor(Math.random()*numResponses);
+			if (index == 0){
 				return "Where is the worst place to play hide and seek in a hospital? In the I.C.U.!!! Geddit??? ICU!!! HAHAHAHA sorry...";
 			}
-			else if (index%numJokes == 1){
+			else if (index == 1){
 				return "What kind of bagel can fly? A plane bagel!! AHAHAHAHA";
 			}
-			else { //(index%numJokes == 2)
+			else if (index == 2){
 				return "Why do trees seem suspicious on sunny days? Because they're shady! AHAHAHAHA!!!! I'll stop...."
 			}
-				
+		case 9: // nonsense
+			var numResponses =3;
+			var index = Math.floor(Math.random()*999);
+			var retval="";
+			if (index ==0) {
+				retval= "I get that you like to talk in gibberish, but I can't understand you.";
+			}
+			else if (index ==1){
+				retval= "Sure, that's great! Let me just translate that from nonsense to binary!";
+			}
+			else if (index ==2){
+				retval= "Me no understand!"
+			}
+			return retval;	
 		default:
 			return TSI.intent;
 	}
