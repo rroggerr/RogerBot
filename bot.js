@@ -110,8 +110,8 @@ function evaluateIntent(){
 				if (callresponse.entities[i].type=="builtin.geography.city"){
 					var weatherjson;
 					var weatherstr = "https://api.openweathermap.org/data/2.5/weather?APPID=8b235727629642db2c474ae09716141d&units=metric&q=";
-					weatherquerystr = weatherstr.concat(capitalized);
-					$.getJSON(,function(json){
+					var weatherquerystr = weatherstr.concat(capitalized);
+					$.getJSON(weatherquerystr ,function(json){
 						weatherjson = json;
 					});
 					retval = "It is currently ".concat(weatherjson.main.temp).concat(" degrees ").concat(weatherjson.weather[0].description).concat(" in ").concat(capitalized);
