@@ -1,6 +1,6 @@
 // Housekeeping Stuff
 window.onload = function(){
-	document.getElementById("bot-form").addEventListener("submit",function(){console.log("botform");});
+	document.getElementById("bot-form").onSubmit=function(){console.log("botform");};
 	document.getElementById("ask-wrapper").innerHTML="<div id=\"ask\" class=\"btn btn-block btn-success lilspace\" onclick=\"sendQuery()\">Ask</div>";
 }
 var apikey="90c98744cc3b4105874a08f6f4b9296e"; //programmer key
