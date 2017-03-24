@@ -1,6 +1,6 @@
 // Housekeeping Stuff
 window.onload = function(){
-	document.getElementById("bot-form").addEventListener("submit",sendQuery);
+	document.getElementById("bot-form").addEventListener("submit",function(){return false;});
 	document.getElementById("ask-wrapper").innerHTML="<div id=\"ask\" class=\"btn btn-block btn-success lilspace\" onclick=\"sendQuery()\">Ask</div>";
 }
 var apikey="90c98744cc3b4105874a08f6f4b9296e"; //programmer key
@@ -100,11 +100,11 @@ function evaluateIntent(){
 			retval = "It is 68 C with a chance of thermal paste right here in the server! We'll be expecting cooler temperatures at night when the usage is lower!";
 			for (var i = 0; i < callresponse.entities.length; i++) {
 				if (callresponse.entities[i].type!="builtin.geography.city"||callresponse.entities[i].type!="builtin.geography.country"){
-					var capitalized = callresponse.entities.entity.charAt(0).toUpperCase();
+					var capitalized = callresponse.entities[i].entity.charAt(0).toUpperCase();
 					retval = capitalized.concat(" isn't a city you ignorant person!");
 				}
 				if (callresponse.entities[i].type=="builtin.geography.city"){
-					var capitalized = callresponse.entities.entity.charAt(0).toUpperCase();
+					var capitalized = callresponse.entities[i].entity.charAt(0).toUpperCase();
 					var weatherjson;
 					$.getJSON("http://api.openweathermap.org/data/2.5/weather?APPID=8b235727629642db2c474ae09716141d&units=metric&q=",function(json){
 						weatherjson = json;
