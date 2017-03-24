@@ -11,6 +11,10 @@ var callresponse="";
 var TSI;
 var BIRTHDAY = 1489467600;
 
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 //Send query code here
 function sendQuery(){
 	var query = document.getElementById("querytext").value;
@@ -99,14 +103,15 @@ function evaluateIntent(){
 		case 5:
 			retval = "It is 68 C with a chance of thermal paste right here in the server! We'll be expecting cooler temperatures at night when the usage is lower!";
 			for (var i = 0; i < callresponse.entities.length; i++) {
+				var capitalized = capitalize(callresponse.entities[i].entity);
 				if (callresponse.entities[i].type!="builtin.geography.city"||callresponse.entities[i].type!="builtin.geography.country"){
-					var capitalized = callresponse.entities[i].entity.charAt(0).toUpperCase();
 					retval = capitalized.concat(" isn't a city you ignorant person!");
 				}
 				if (callresponse.entities[i].type=="builtin.geography.city"){
-					var capitalized = callresponse.entities[i].entity.charAt(0).toUpperCase();
 					var weatherjson;
-					$.getJSON("http://api.openweathermap.org/data/2.5/weather?APPID=8b235727629642db2c474ae09716141d&units=metric&q=",function(json){
+					var weatherstr = "https://api.openweathermap.org/data/2.5/weather?APPID=8b235727629642db2c474ae09716141d&units=metric&q=";
+					weatherquerystr = weatherstr.concat(capitalized);
+					$.getJSON(,function(json){
 						weatherjson = json;
 					});
 					retval = "It is currently ".concat(weatherjson.main.temp).concat(" degrees ").concat(weatherjson.weather[0].description).concat(" in ").concat(capitalized);
