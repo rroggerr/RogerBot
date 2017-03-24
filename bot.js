@@ -127,7 +127,7 @@ function evaluateIntent(){
 			}
 		case 9: // nonsense
 			var numResponses =3;
-			var index = Math.floor(Math.random()*999);
+			var index = Math.floor(Math.random()*numResponses);
 			var retval="";
 			if (index ==0) {
 				retval= "I get that you like to talk in gibberish, but I can't understand you.";
