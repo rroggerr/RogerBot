@@ -108,13 +108,8 @@ function evaluateIntent(){
 					retval = capitalized.concat(" isn't a city you ignorant person!");
 				}
 				if (callresponse.entities[i].type=="builtin.geography.city"){
-					var weatherjson;
-					var weatherstr = "https://api.openweathermap.org/data/2.5/weather?APPID=8b235727629642db2c474ae09716141d&units=metric&q=";
-					var weatherquerystr = weatherstr.concat(capitalized);
-					$.getJSON(weatherquerystr ,function(json){
-						weatherjson = json;
-					});
-					retval = "It is currently ".concat(weatherjson.main.temp).concat(" degrees ").concat(weatherjson.weather[0].description).concat(" in ").concat(capitalized);
+					var weatherlink = "https://www.wunderground.com/cgi-bin/findweather/getForecast?query=".concat(capitalized);
+					retval = "Now do I look like Siri to you? Go find your own weather <a href=\"".concat(weatherlink).concat(\">here</a>!");
 				}
 			}
 			return retval;
