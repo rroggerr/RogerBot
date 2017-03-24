@@ -19,7 +19,7 @@ function capitalize(string) {
 function sendQuery(){
 	var query = document.getElementById("querytext").value;
 	if (query==""){
-		respText=" (⊙︿⊙)_/¯ ?? ";
+		respText=" ?? ¯\_(⊙︿⊙) ";
 		document.getElementById("responsebox").innerHTML=respText;
 	}
 	else {
@@ -30,7 +30,7 @@ function sendQuery(){
 }
 
 function displayResponse(){
-	if (TSI.score<0.2 || TSI.intent=="None"){
+	if (TSI.score<0.29 || TSI.intent=="None"){
 		respText="I dunno :("
 	}
 	else {
