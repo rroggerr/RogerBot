@@ -109,7 +109,7 @@ function evaluateIntent(){
 				}
 				if (callresponse.entities[i].type=="builtin.geography.city"){
 					var weatherlink = "https://www.wunderground.com/cgi-bin/findweather/getForecast?query=".concat(capitalized);
-					retval = "Now do I look like Siri to you? Go find your own weather here you lazy bum! ".concat(weatherlink));
+					retval = "Now do I look like Siri to you? Go find your own weather here you lazy bum! ".concat(weatherlink);
 				}
 			}
 			return retval;
