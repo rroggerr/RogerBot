@@ -113,7 +113,7 @@ function evaluateIntent(){
 			}
 			return retval;
 		case 5: //weather
-			retval = "It is 68 C with a chance of thermal paste right here in the server! We'll be expecting cooler temperatures at night when the usage is lower!";
+			var retval = "It is 68 C with a chance of thermal paste right here in the server! We'll be expecting cooler temperatures at night when the usage is lower!";
 			for (var i = 0; i < callresponse.entities.length; i++) {
 				var capitalized = capitalize(callresponse.entities[i].entity);
 				if (callresponse.entities[i].type!="builtin.geography.city"||callresponse.entities[i].type!="builtin.geography.country"){
@@ -140,6 +140,20 @@ function evaluateIntent(){
 			else if (index == 2){
 				return "Why do trees seem suspicious on sunny days? Because they're shady! AHAHAHAHA!!!! I'll stop...."
 			}
+		case 8: //references
+			var retval;
+			for (var i = 0; i < callresponse.entities.length; i++) {
+				if (callresponse.entities[i].type=="References::Westworld"){
+					retval = "Doesn't look like anything to me...";
+				}
+				else if (callresponse.entities[i].type=="References::MeaningofLife"){
+					retval = "The answer to that is 42 of course!";
+				}
+				else if (callresponse.entities[i].type=="References::Geese"){
+					retval = "HONK HONK!! HISSSSS!!!!!!"	
+				}
+			}
+			return retval;
 		case 9: // nonsense
 			var numResponses =3;
 			var index = Math.floor(Math.random()*numResponses);
