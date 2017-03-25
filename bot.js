@@ -107,7 +107,7 @@ function evaluateIntent(){
 				}
 				if (callresponse.entities[i].type=="builtin.geography.city"){
 					var weatherlink = "https://www.wunderground.com/cgi-bin/findweather/getForecast?query=".concat(capitalized);
-					retval = 'Now do I look like Siri to you? Go find the weather for '.concat(capitalized).concat(' <a href="'.concat(weatherlink).concat('">here </a> you lazy bum!');
+					retval = 'Now do I look like Siri to you? Go find the weather for '.concat(capitalized).concat(' <a href="').concat(weatherlink).concat('">here </a> you lazy bum!');
 				}
 				if (callresponse.entities[i].type=="builtin.datetime.date" && callresponse.entities[i].entity!='today'){
 					retval = "Do I look like I have a time machine? Even if I did, I wouldn't use it to check the weather!");
