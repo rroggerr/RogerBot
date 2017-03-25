@@ -1,0 +1,65 @@
+
+h1,h2,h4{
+	width:100%;
+	text-align: center;
+}
+
+.small{
+  text-align: right;
+}
+
+
+.links {
+  max-width: 100%;
+}
+
+
+#intro, #bot-form{
+  width: ;
+  padding: 20px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+@media screen and (max-width: 900px) {
+/* applies only if the screen is narrower than 700px */
+  #intro, #bot-form{
+    padding: 1%;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+}
+
+.sticky{
+  position: relative;
+  float: left;
+}
+
+.lilspace{
+  padding: 5px;
+}
+
+#querytext{
+  margin-bottom: 5px;
+}
+
+.links {
+  width:320px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    from {color: black;}
+    to {color: yellow;}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+    from {color: black;}
+    to {color: yellow;}
+}
+
+
