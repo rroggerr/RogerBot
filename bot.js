@@ -54,12 +54,17 @@ function ajaxCall(){
 // Evaluate and generate response
 function evaluateIntent(){
 	switch(parseInt(TSI.intent)){
-		case 1: //insult
-			if(Math.random()>=0.5){
+		case 1: //complaint
+			var numResponses =3;
+			var index = Math.floor(Math.random()*numResponses);
+			if(index ==0){
 				return "Woah woah woah, I'm just the messenger here ok? I do what my code tells me to do!"
 			}
-			else {
+			else if (index ==1) {
 				return "You gotta problem with me? Email my boss! Click the email link above!"
+			}
+			else { //if (index ==2)
+				return "Hey! That's not a very nice thing to say!"
 			}
 		case 2: //greeting
 			var retval="";
