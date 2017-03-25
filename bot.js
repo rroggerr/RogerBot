@@ -1,6 +1,5 @@
 // Housekeeping Stuff
 window.onload = function(){
-	document.getElementById("ask").onSubmit=sendQuery();
 	document.getElementById("ask-wrapper").innerHTML="<div id=\"ask\" class=\"btn btn-block btn-success lilspace\" onclick=\"sendQuery()\">Ask</div>";
 }
 var apikey="90c98744cc3b4105874a08f6f4b9296e"; //programmer key
