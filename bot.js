@@ -112,6 +112,9 @@ function evaluateIntent(){
 				
 			}
 			return retval;
+		case 4: // About Roger
+			var retval = "I don't know anything about Roger at the moment...";
+			return retval;
 		case 5: //weather
 			var retval = "It is 68 C with a chance of thermal paste right here in the server! We'll be expecting cooler temperatures at night when the usage is lower!";
 			for (var i = 0; i < callresponse.entities.length; i++) {
