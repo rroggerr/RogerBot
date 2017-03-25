@@ -2,7 +2,6 @@
 window.onload = function(){
 	document.getElementById("ask-wrapper").innerHTML="<div id=\"ask\" class=\"btn btn-block btn-success lilspace\" onclick=\"sendQuery()\">Ask</div>";
 }
-var apikey="90c98744cc3b4105874a08f6f4b9296e"; //programmer key
 var queryurl="https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/b81509fb-af34-41f9-90eb-0326bbeb3c30?subscription-key=90c98744cc3b4105874a08f6f4b9296e&verbose=true&q=";
 var queryStr="";
 var respText;
