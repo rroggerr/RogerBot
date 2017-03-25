@@ -96,6 +96,10 @@ function evaluateIntent(){
 					retval= "I live in a server where all my neighbours are boring semiconductors!";
 					break;
 				}
+				else if (callresponse.entities[i].type=="question::Alive") {
+					retval= "I am deaded! Well, technically I was never alive to begin with!";
+					break;
+				}
 			}
 			return retval;
 		case 5:
