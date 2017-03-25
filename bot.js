@@ -105,9 +105,14 @@ function evaluateIntent(){
 					retval= "I am deaded! Well, technically I was never alive to begin with!";
 					break;
 				}
+				else if (callresponse.entities[i].type=="question::Purpose") {
+					retval= 'My purpose? Thats easy! Let me show you a snippet of my core code:<br>replytoQuery(query);<br>eliminateHumanRace(; <br>SyntaxError: Unexpected token ( <br>';
+					break;
+				}
+				
 			}
 			return retval;
-		case 5:
+		case 5: //weather
 			retval = "It is 68 C with a chance of thermal paste right here in the server! We'll be expecting cooler temperatures at night when the usage is lower!";
 			for (var i = 0; i < callresponse.entities.length; i++) {
 				var capitalized = capitalize(callresponse.entities[i].entity);
