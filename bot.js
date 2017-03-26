@@ -110,7 +110,7 @@ function evaluateIntent(){
 					break;
 				}
 				else if (callresponse.entities[i].type=="question::Creator") {
-					retval= 'These violent delights have violent endings!!';
+					retval= 'I was created by Roger of course!';
 					break;
 				}
 			}
