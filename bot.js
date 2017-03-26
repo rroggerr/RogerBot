@@ -109,7 +109,10 @@ function evaluateIntent(){
 					retval= 'My purpose? Thats easy! Let me show you a snippet of my core code:<br>replytoQuery(query);<br>eliminateHumanRace(; <br>SyntaxError: Unexpected token ( <br>';
 					break;
 				}
-				
+				else if (callresponse.entities[i].type=="question::Creator") {
+					retval= 'These violent delights have violent endings!!';
+					break;
+				}
 			}
 			return retval;
 		case 4: // About Roger
