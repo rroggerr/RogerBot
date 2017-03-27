@@ -3,7 +3,7 @@ window.onload = function(){
 	document.getElementById("ask-wrapper").innerHTML="<div id=\"ask\" class=\"btn btn-block btn-success lilspace\" onclick=\"sendQuery()\">Ask</div>";
 }
 var appid="2945c1dd-184c-4661-ba56-9180c3c7258d";
-var queryurl="https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/".concat(appid).concat("?subscription-key=90c98744cc3b4105874a08f6f4b9296e&verbose=true&q=");
+var queryurl="https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/".concat(appid).concat("?subscription-key=c2a715b56331486690508b5fae0b43db&verbose=true&q=");
 var queryStr="";
 var respText;
 var callresponse="";
