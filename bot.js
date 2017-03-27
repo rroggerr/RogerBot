@@ -2,7 +2,8 @@
 window.onload = function(){
 	document.getElementById("ask-wrapper").innerHTML="<div id=\"ask\" class=\"btn btn-block btn-success lilspace\" onclick=\"sendQuery()\">Ask</div>";
 }
-var queryurl="https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/b81509fb-af34-41f9-90eb-0326bbeb3c30?subscription-key=90c98744cc3b4105874a08f6f4b9296e&verbose=true&q=";
+var appid="2945c1dd-184c-4661-ba56-9180c3c7258d";
+var queryurl="https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/".concat(appid).concat("?subscription-key=90c98744cc3b4105874a08f6f4b9296e&verbose=true&q=");
 var queryStr="";
 var respText;
 var callresponse="";
