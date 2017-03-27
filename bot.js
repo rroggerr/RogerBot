@@ -127,7 +127,42 @@ function evaluateIntent(){
 			}
 			return retval;
 		case 4: // About Roger
-			var retval = "I don't know anything about Roger at the moment...";
+			var retval = "Roger's the guy who created me! Duh! Check out his details above!";
+			for (var i = 0; i < callresponse.entities.length; i++) {
+				if (callresponse.entities[i].type=="question::Age"){
+					// calculate current age
+					var age = Math.round(((new Date()).getTime()-751158000000)/1000/3600/24/365);
+					retval= "Roger is currently ".concat(age).concat(" years old! I think that's in human time!");
+					break;
+				}
+				else if (callresponse.entities[i].type=="question::Name") {
+					retval= "You just said his name! Genius!";
+					break;
+				}
+				else if (callresponse.entities[i].type=="question::Birthday") {
+					retval= "Roger was born on October 21, 1993!";
+					break;
+				}
+				else if (callresponse.entities[i].type=="question::Where") {
+					retval= "Roger currently lives in the city of Beijing in China!";
+					break;
+				}
+				else if (callresponse.entities[i].type=="question::Alive") {
+					retval= "I think Roger is still alive! At least for the past 30 days. Because he needs to maintain me every 30 days!";
+					break;
+				}
+				else if (callresponse.entities[i].type=="question::Creator") {
+					retval= "He's not a host! He's not like one of us!";
+					break;
+				}
+				// Entities override school + job
+				if (callresponse.entities[i].type=="question::School"){
+					retval = "Roger finished his undergraduate degree at the University of Waterloo. Click on the 'W' Link above!"
+				}
+				else if (callresponse.entities[i].type=="question::Job"){
+					retval="Roger is currently UNEMPLOYED at the moment! If you are interested in hiring him, please let me know, so I can quit my job of being this stupid robot."
+				}
+			}
 			return retval;
 		case 5: //weather
 			var retval = "It is 68 C with a chance of thermal paste right here in the server! We'll be expecting cooler temperatures at night when the usage is lower!";
