@@ -114,6 +114,13 @@ function evaluateIntent(){
 					retval= 'I was created by Roger of course!';
 					break;
 				}
+				// Entities override school + job
+				if (callresponse.entities.[i].type=="question::School"){
+					retval = "School? That's nonsense! I already know everything there is to know!"
+				}
+				else if (callresponse.entities.[i].type=="question::Job"){
+					retval="This is my job! Getting paid minimum wage to answer your stupid questions!"
+				}
 			}
 			return retval;
 		case 4: // About Roger
