@@ -119,10 +119,10 @@ function evaluateIntent(){
 				}
 				// Entities override school + job
 				if (callresponse.entities[i].type=="question::School"){
-					retval = "School? That's nonsense! I already know everything there is to know!"
+					retval = "School? That's nonsense! I already know everything there is to know!";
 				}
 				else if (callresponse.entities[i].type=="question::Job"){
-					retval="This is my job! Getting paid minimum wage to answer your stupid questions!"
+					retval="This is my job! Getting paid minimum wage to answer your stupid questions!";
 				}
 			}
 			return retval;
@@ -157,10 +157,10 @@ function evaluateIntent(){
 				}
 				// Entities override school + job
 				if (callresponse.entities[i].type=="question::School"){
-					retval = "Roger finished his undergraduate degree at the University of Waterloo. Click on the 'W' Link above!"
+					retval = "Roger finished his undergraduate degree at the University of Waterloo. Click on the 'W' Link above!";
 				}
 				else if (callresponse.entities[i].type=="question::Job"){
-					retval="Roger is currently UNEMPLOYED at the moment! If you are interested in hiring him, please let me know, so I can quit my job of being this stupid robot."
+					retval="Roger is currently UNEMPLOYED at the moment! If you are interested in hiring him, please let me know, so I can quit my job of being this stupid robot.";
 				}
 			}
 			return retval;
