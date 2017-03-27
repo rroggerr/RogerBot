@@ -90,33 +90,26 @@ function evaluateIntent(){
 					// calculate current age
 					var age = Math.round(((new Date()).getTime()-1489467600000)/1000);
 					retval= "I am currently ".concat(age).concat(" seconds old! You convert that into human time!");
-					break;
 				}
 				else if (callresponse.entities[i].type=="question::Name") {
 					retval= "The name's Bot, RogerBot!";
-					break;
 				}
 				else if (callresponse.entities[i].type=="question::Birthday") {
 					retval= "I was born around 1489467600 Epoch Units...";
-					break;
 				}
 				else if (callresponse.entities[i].type=="question::Where") {
 					retval= "I live in a server where all my neighbours are boring semiconductors!";
-					break;
 				}
 				else if (callresponse.entities[i].type=="question::Alive") {
 					retval= "I am deaded! Well, technically I was never alive to begin with!";
-					break;
 				}
 				else if (callresponse.entities[i].type=="question::Purpose") {
 					retval= 'My purpose? Thats easy! Let me show you a snippet of my core code:<br>replytoQuery(query);<br>eliminateHumanRace(; <br>SyntaxError: Unexpected token ( <br>';
-					break;
 				}
 				else if (callresponse.entities[i].type=="question::Creator") {
 					retval= 'I was created by Roger of course!';
-					break;
 				}
-				// Entities override school + job
+				// Entities override basic responses
 				if (callresponse.entities[i].type=="question::School"){
 					retval = "School? That's nonsense! I already know everything there is to know!";
 				}
@@ -132,29 +125,23 @@ function evaluateIntent(){
 					// calculate current age
 					var age = Math.round(((new Date()).getTime()-751158000000)/1000/3600/24/365);
 					retval= "Roger is currently ".concat(age).concat(" years old! I think that's in human time!");
-					break;
 				}
 				else if (callresponse.entities[i].type=="question::Name") {
 					retval= "You just said his name! Genius!";
-					break;
 				}
 				else if (callresponse.entities[i].type=="question::Birthday") {
 					retval= "Roger was born on October 21, 1993!";
-					break;
 				}
 				else if (callresponse.entities[i].type=="question::Where") {
 					retval= "Roger currently lives in the city of Beijing in China!";
-					break;
 				}
 				else if (callresponse.entities[i].type=="question::Alive") {
 					retval= "I think Roger is still alive! At least for the past 30 days. Because he needs to maintain me every 30 days!";
-					break;
 				}
 				else if (callresponse.entities[i].type=="question::Creator") {
 					retval= "He's not a host! He's not like one of us!";
-					break;
 				}
-				// Entities override school + job
+				// Entities override basic responses
 				if (callresponse.entities[i].type=="question::School"){
 					retval = "Roger finished his undergraduate degree at the University of Waterloo. Click on the 'W' Link above!";
 				}
