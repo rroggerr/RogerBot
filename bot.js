@@ -8,7 +8,6 @@ var queryStr="";
 var respText;
 var callresponse="";
 var TSI;
-var BIRTHDAY = 1489467600;
 
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
