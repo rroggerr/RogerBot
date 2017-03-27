@@ -9,7 +9,7 @@ The recognization of user speech is powered by a machine learning cloud service 
 
 Credits to the Microsoft LUIS cloud service where you can train it to understand natural language. It can take up to 80 intents and it's free for up to 10,000 hits/month: http://luis.ai
 
-Also heck out my Javascript on Github if you want to learn more about it! The user interface is hosted on my undergrad school server http://www.student.cs.uwaterloo.ca/~rgeng/
+Also check out my Javascript on Github if you want to learn more about it! The user interface is hosted on my undergrad school server http://www.student.cs.uwaterloo.ca/~rgeng/
 
 * The index.html page is only added here as a reference, for the up-to-date version, refer to my uwaterloo website
 * RogerBot does not collect any personal information
