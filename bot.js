@@ -146,7 +146,7 @@ function evaluateIntent(){
 					retval = "Roger finished his undergraduate degree at the University of Waterloo. Click on the 'W' Link above!";
 				}
 				else if (callresponse.entities[i].type=="question::Job"){
-					retval="Roger is currently UNEMPLOYED at the moment! If you are interested in hiring him, please let me know, so I can quit my job of being this stupid robot.";
+					retval="Roger is currently UNEMPLOYED at the moment! If you are hiring, please let me know (before Roger does), so I can quit my job of being this stupid robot...";
 				}
 			}
 			return retval;
