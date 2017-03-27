@@ -41,14 +41,17 @@ function displayResponse(){
 // Ajax call
 function ajaxCall(){
 	var jsresp;
-			$.ajax({
+	$.ajax({
             dataType: "json",
             url: queryStr,
             success: function (json) {
             	callresponse=json;
             	TSI=json.topScoringIntent;
             	displayResponse();
-            }
+            },
+	    error: function(){
+	    	document.getElementById("responsebox").innerHTML="Dieded... (x⸑x)";
+	    }
         });
 }
 
