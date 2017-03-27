@@ -178,6 +178,18 @@ function evaluateIntent(){
 			else if (index == 2){
 				return "Why do trees seem suspicious on sunny days? Because they're shady! AHAHAHAHA!!!! I'll stop...."
 			}
+		case 7: //helpdoc
+			var numResponses =3;
+			var index = Math.floor(Math.random()*numResponses);
+			if (index == 0){
+				return "Try asking anything! I'm still in my testing stage!";
+			}
+			else if (index == 1){
+				return "Maybe you could try some Siri commands! Although I'm like TOTALLY better than her!";
+			}
+			else if (index == 2){
+				return "Ask and you shall receive*! <br>    *May or may not receive";
+			}
 		case 8: //references
 			var retval;
 			for (var i = 0; i < callresponse.entities.length; i++) {
