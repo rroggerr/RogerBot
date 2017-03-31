@@ -1,4 +1,4 @@
-// Housekeeping Stuff
+//  ---------- Housekeeping Stuff -------
 window.onload = function(){
 	document.getElementById("ask-wrapper").innerHTML="<div id=\"ask\" class=\"btn btn-block btn-success lilspace\" onclick=\"sendQuery()\">Ask</div>";
 }
@@ -9,11 +9,12 @@ var respText;
 var callresponse="";
 var TSI;
 
+// --- function that capitalizes first letter of a string
 function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-//Send query code here
+//Checks if textbox is empty and if !empty: sends out query through ajaxCall(); 
 function sendQuery(){
 	var query = document.getElementById("querytext").value;
 	if (query==""){
@@ -24,11 +25,14 @@ function sendQuery(){
 		document.getElementById("responsebox").innerHTML="Do do do do dooooo (Thinking)...";
 		queryStr = queryurl.concat(query);
 		ajaxCall();
+	// Do not include anything here OR ELSE synchronization issues
 	}
 }
 
 function displayResponse(){
-	if (TSI.score<0.29 || TSI.intent=="None"){
+	var threshold =0.29;
+	// Determines if the TSI (Top scoring intent) reaches our threshold of 0.29 for now.
+	if (TSI.score<threshold || TSI.intent=="None"){
 		respText="I dunno :("
 	}
 	else {
@@ -54,8 +58,9 @@ function ajaxCall(){
         });
 }
 
-// Evaluate and generate response
+// Evaluate and generate response 
 function evaluateIntent(){
+	// Switches according to the first integers of an intent
 	switch(parseInt(TSI.intent)){
 		case 1: //complaint
 			var numResponses =3;
@@ -71,6 +76,7 @@ function evaluateIntent(){
 			}
 		case 2: //greeting
 			var retval="";
+			// Ughhh this is bad 
 			if(Math.random()>=0.5){
 				retval= "Hi, I'm the omniscient and omnipotent RogerBot! I act and talk just like Roger, in fact, people can't even tell the difference!";
 			}
