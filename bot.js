@@ -14,6 +14,15 @@ function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+// Write cookie with the name of the person
+function setCookie(uname) {
+    var exdays
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = "uname" + "=" +uname+ ";" + expires + ";path=/";
+}
+
 //Checks if textbox is empty and if !empty: sends out query through ajaxCall(); 
 function sendQuery(){
 	var query = document.getElementById("querytext").value;
@@ -224,6 +233,14 @@ function evaluateIntent(){
 				retval= "Me no understand!"
 			}
 			return retval;	
+		case 12: // Cookiewrite
+			var retval="I'll try to remember that!";
+			for (var i = 0; i < callresponse.entities.length; i++) {
+				if (callresponse.entities[i].type=="References::Westworld"){
+					setCookie()
+				}
+			}
+			return retval;
 		default:
 			return TSI.intent;
 	}
