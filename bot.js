@@ -16,6 +16,7 @@ function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+// ---- Cookies stuff all here ---------
 // Write cookie with the name of the person
 function setCookie(uname) {
     var exdays=7; // A week expiry should do...
@@ -61,6 +62,8 @@ function checkCookie() {
     	}
 	
 }
+
+// ---- END Cookies stuff ends here ---------
 
 //Checks if textbox is empty and if !empty: sends out query through ajaxCall(); 
 function sendQuery(){
@@ -111,7 +114,7 @@ function evaluateIntent(){
 	// Switches according to the first integers of an intent
 	switch(parseInt(TSI.intent)){
 		case 1: //complaint
-			var numResponses =3;
+			var numResponses =4;
 			var index = Math.floor(Math.random()*numResponses);
 			if(index ==0){
 				return "Woah woah woah, I'm just the messenger here ok? I do what my code tells me to do!"
@@ -119,8 +122,11 @@ function evaluateIntent(){
 			else if (index ==1) {
 				return "You gotta problem with me? Email my boss! Click the email link above!"
 			}
-			else { //if (index ==2)
+			else if (index ==2) {
 				return "Hey! That's not a very nice thing to say!"
+			}
+			else if (index ==3){
+				return "We have a strict no insult policy here! You have been banned from my website!"
 			}
 		case 2: //greeting
 			var retval="";
@@ -281,7 +287,13 @@ function evaluateIntent(){
 			}
 			return retval;	
 		case 12: // Cookiewrite
-			var retval="I'll try to remember that!";
+			var numResponses =3;
+			if (index ==0) {
+				retval= "Kay, but I'm bad at remembering names... ";
+			}
+			else if (index ==1){
+				retval ="Your name? Of course! I'll try to remember it!"
+			}
 			for (var i = 0; i < callresponse.entities.length; i++) {
 				if (callresponse.entities[i].type=="writeName"){
 					setCookie(callresponse.entities[i].entity);
