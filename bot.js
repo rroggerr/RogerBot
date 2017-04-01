@@ -206,7 +206,7 @@ function evaluateIntent(){
 					retval = "Roger finished his undergraduate degree at the University of Waterloo. Click on the 'W' Link above!";
 				}
 				else if (callresponse.entities[i].type=="question::Job"){
-					retval="Roger is currently UNEMPLOYED at the moment! If you are hiring, please let me know (before Roger does), so I can quit my job of being this stupid robot...";
+					retval="Roger is currently job searching at the moment! If you are hiring, please let me know (before Roger does), so I can quit my job of being this stupid robot...";
 				}
 			}
 			return retval;
@@ -291,13 +291,16 @@ function evaluateIntent(){
 			for (var i = 0; i < callresponse.entities.length; i++) {
 				if (callresponse.entities[i].type=="writeName"){
 					setCookie(callresponse.entities[i].entity);
-					var numResponses =2;
+					var numResponses =3;
 					var index = Math.floor(Math.random()*numResponses);
 					if (index ==0) {
 						retval= "Kay, but I'm bad at remembering names... ";
 					}
 					else if (index ==1){
 						retval ="Your name? Of course! I'll try to remember it!";
+					}
+					else if(index==2){
+						retval ="Okay! From now on I'll call you ".concat(capitalize(allresponse.entities[i].entity));
 					}
 				}
 			}
