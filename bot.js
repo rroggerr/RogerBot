@@ -7,6 +7,7 @@ var _0x2fdc=['\x3f\x73\x75\x62\x73\x63\x72\x69\x70\x74\x69\x6f\x6e\x2d\x6b\x65\x
 var queryStr="";
 var respText;
 var callresponse;
+var cookieName="rbotuname"
 var TSI;
 
 // --- function that capitalizes first letter of a string
@@ -20,7 +21,23 @@ function setCookie(uname) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+ d.toUTCString();
-    document.cookie = "uname" + "=" +uname+ ";" + expires + ";path=/";
+    document.cookie = cookieName + "=" +uname+ ";" + expires + ";path=/";
+}
+
+function getCookie() {
+    var name = cookieName + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
 
 //Checks if textbox is empty and if !empty: sends out query through ajaxCall(); 
@@ -174,7 +191,15 @@ function evaluateIntent(){
 				}
 				if (callresponse.entities[i].type=="builtin.geography.city"){
 					var weatherlink = "https://www.wunderground.com/cgi-bin/findweather/getForecast?query=".concat(capitalized);
-					retval = 'Now do I look like Siri to you? Go find the weather for '.concat(capitalized).concat(' <a href="').concat(weatherlink).concat('">here</a>!');
+					var numResponses =2;
+					var index = Math.floor(Math.random()*numResponses);
+					if (index == 0){
+						retval = "I'm too poor to afford these APIs so why don't I give u a nice weather ".concat(' <a href="').concat(weatherlink).concat('">link</a>!');
+					}
+					else if (index == 1){
+						retval = 'Now do I look like Siri to you? Go find the weather for '.concat(capitalized).concat(' <a href="').concat(weatherlink).concat('">here</a>!');
+					}
+					
 				}
 				if (callresponse.entities[i].type=="builtin.datetime.date" && callresponse.entities[i].entity!='today'){
 					retval = "Do I look like I have a time machine? Even if I did, I wouldn't be using it to check the weather!";
