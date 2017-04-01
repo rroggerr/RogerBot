@@ -287,7 +287,7 @@ function evaluateIntent(){
 			}
 			return retval;	
 		case 12: // Cookiewrite
-			var numResponses =3;
+			var numResponses =2;
 			if (index ==0) {
 				retval= "Kay, but I'm bad at remembering names... ";
 			}
