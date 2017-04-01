@@ -44,17 +44,18 @@ function getCookie() {
 function checkCookie() {
 	var uname=getCookie();
 	if (uname != "") {
+		uname = capitalize(uname);
 		var respText="";
         	var numResponses =3;
 			var index = Math.floor(Math.random()*numResponses);
 			if (index == 0){
-				respText= "Welcome back ".concat(uname).concat(" !");
+				respText= "Welcome back ".concat(uname).concat("!");
 			}
 			else if (index == 1){
 				respText= uname.concat("! You're back!! I thought you forgot about me!");
 			}
 			else if (index == 2){
-				respText= "Hey ".concat(uname).concat(" ! Didn't think you were ever gonna come back!");
+				respText= "Hey ".concat(uname).concat("! Didn't think you were ever gonna come back!");
 			}
 		document.getElementById("responsebox").innerHTML=respText;
     	}
