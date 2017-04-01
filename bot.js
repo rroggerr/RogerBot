@@ -18,7 +18,7 @@ function capitalize(string) {
 
 // Write cookie with the name of the person
 function setCookie(uname) {
-    var exdays
+    var exdays=7; // A week expiry should do...
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+ d.toUTCString();
@@ -49,7 +49,7 @@ function checkCookie() {
         	var numResponses =3;
 			var index = Math.floor(Math.random()*numResponses);
 			if (index == 0){
-				respText= "Welcome back ".concat(uname).concat("!");
+				respText= "Welcome back ".concat(uname).concat("! What can I do for you today!");
 			}
 			else if (index == 1){
 				respText= uname.concat("! You're back!! I thought you forgot about me!");
