@@ -286,17 +286,19 @@ function evaluateIntent(){
 				retval= "Me no understand!"
 			}
 			return retval;	
-		case 12: // Cookiewrite
-			var numResponses =2;
-			if (index ==0) {
-				retval= "Kay, but I'm bad at remembering names... ";
-			}
-			else if (index ==1){
-				retval ="Your name? Of course! I'll try to remember it!"
-			}
+		case 12: // Cookiewrite write user's name into cookies
+			retval="I'm sorry, I didn't quite catch your name! Once again please?";
 			for (var i = 0; i < callresponse.entities.length; i++) {
 				if (callresponse.entities[i].type=="writeName"){
 					setCookie(callresponse.entities[i].entity);
+					var numResponses =2;
+					var index = Math.floor(Math.random()*numResponses);
+					if (index ==0) {
+						retval= "Kay, but I'm bad at remembering names... ";
+					}
+					else if (index ==1){
+						retval ="Your name? Of course! I'll try to remember it!";
+					}
 				}
 			}
 			return retval;
