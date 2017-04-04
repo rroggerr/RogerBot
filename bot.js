@@ -309,7 +309,7 @@ function evaluateIntent(){
 						retval ="Your name? Of course! I'll try to remember it!";
 					}
 					else if(index==2){
-						retval ="Okay! From now on I'll call you ".concat(capitalize(allresponse.entities[i].entity));
+						retval ="Okay! From now on I'll call you ".concat(capitalize(callresponse.entities[i].entity));
 					}
 				}
 			}
