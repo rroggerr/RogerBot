@@ -31,7 +31,7 @@ function getCookie() {
 
 function checkCookie() {
 	var uname=getCookie();
-	if (uname != "") {
+	if (uname != undefined) {
 		uname = capitalize(uname);
 		var respText="";
         	var numResponses =3;
