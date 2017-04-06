@@ -19,11 +19,8 @@ function capitalize(string) {
 // ---- Cookies stuff all here ---------
 // Write cookie with the name of the person
 function setCookie(uname) {
-    var exdays=7; // A week expiry should do...
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = cookieName + "=" +uname+ ";" + expires + ";path=/";
+    var exdays=14; // 2 weeks expiry should do...
+    Cookies.set('name', 'value', { expires: exdays });
 }
 
 function getCookie() {
