@@ -8,7 +8,7 @@ var _0x2fdc=['\x3f\x73\x75\x62\x73\x63\x72\x69\x70\x74\x69\x6f\x6e\x2d\x6b\x65\x
 var queryStr="";
 var respText;
 var callresponse;
-var cookieName="rbotuname"
+var cookieName="__rbotuname"
 var TSI;
 
 // --- function that capitalizes first letter of a string
@@ -20,23 +20,13 @@ function capitalize(string) {
 // Write cookie with the name of the person
 function setCookie(uname) {
     var exdays=14; // 2 weeks expiry should do...
-    Cookies.set("rbotuname", uname, { expires: exdays });
+    Cookies.set(cookieName, uname, { expires: exdays });
 }
 
 function getCookie() {
-    var name = cookieName + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
+	var uname = "";
+	uname = Cookies.get(cookieName);
+	return uname;
 }
 
 function checkCookie() {
