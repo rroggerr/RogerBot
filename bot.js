@@ -277,13 +277,23 @@ function evaluateIntent(){
 			return retval;	
 		case 10: // about inquirer
 			var uname=getCookie();
-			var retval = "I don't know that much about you..."
+			uname = capitalize(uname);
+			if (uname != undefined){
+				var retval = "Well I know your name is ".concat(uname)", but I don't know that much about you.";
+			}
+			else {
+				var retval = "I don't know that much about you... Why don't you start by telling me what your name is?";	
+			}
 			for (var i = 0; i < callresponse.entities.length; i++) {
 				if (callresponse.entities[i].type=="question::Name"){
-					retval = "Well, if I remember correctly, your name is ".concat(capitalize(uname));
-				}
-			return retval;
+					if (uname != undefined){
+						retval = "Well, if I remember correctly, your name is ".concat(capitalize(uname));
+					}
+					else {
+						retval = "Why don't you start by telling me what your name is?";	
+					}
 			}
+			return retval;
 		case 12: // Cookiewrite write user's name into cookies
 			retval="I'm sorry, I didn't quite catch your name! Once again please?";
 			for (var i = 0; i < callresponse.entities.length; i++) {
