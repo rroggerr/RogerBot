@@ -279,7 +279,7 @@ function evaluateIntent(){
 			var uname=getCookie();
 			uname = capitalize(uname);
 			if (uname != undefined){
-				var retval = "Well I know your name is ".concat(uname)", but I don't know that much about you.";
+				var retval = "Well I know your name is ".concat(uname).concat(", but I don't know that much about you.");
 			}
 			else {
 				var retval = "I don't know that much about you... Why don't you start by telling me what your name is?";	
@@ -287,7 +287,7 @@ function evaluateIntent(){
 			for (var i = 0; i < callresponse.entities.length; i++) {
 				if (callresponse.entities[i].type=="question::Name"){
 					if (uname != undefined){
-						retval = "Well, if I remember correctly, your name is ".concat(capitalize(uname));
+						retval = "Well, if I remember correctly, your name is ".concat(uname);
 					}
 					else {
 						retval = "Why don't you start by telling me what your name is?";	
