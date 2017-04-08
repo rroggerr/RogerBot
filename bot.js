@@ -292,6 +292,7 @@ function evaluateIntent(){
 					else {
 						retval = "Why don't you start by telling me what your name is?";	
 					}
+				}
 			}
 			return retval;
 		case 12: // Cookiewrite write user's name into cookies
