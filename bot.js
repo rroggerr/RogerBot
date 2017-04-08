@@ -96,6 +96,8 @@ function ajaxCall(){
         });
 }
 
+var _0x202c=['\x66\x6c\x6f\x6f\x72','\x72\x61\x6e\x64\x6f\x6d','\x47\x69\x61\x6e\x74\x20\x68\x75\x67\x67\x69\x65\x21\x21','\x46\x72\x69\x65\x6e\x64\x73\x68\x69\x70\x2c\x20\x68\x75\x67\x67\x69\x65\x21\x21\x20\x50\x41\x54\x20\x50\x41\x54\x20\x50\x41\x54'];(function(_0x1c357b,_0x337752){var _0x31e591=function(_0x558c7f){while(--_0x558c7f){_0x1c357b['\x70\x75\x73\x68'](_0x1c357b['\x73\x68\x69\x66\x74']());}};_0x31e591(++_0x337752);}(_0x202c,0x154));var _0xc202=function(_0x3e8db2,_0x580797){_0x3e8db2=_0x3e8db2-0x0;var _0x417118=_0x202c[_0x3e8db2];return _0x417118;};function callSpecial(){var _0xf05aaa=0x3;var _0x30fb1b=Math[_0xc202('0x0')](Math[_0xc202('0x1')]()*_0xf05aaa);if(_0x30fb1b==0x0){return'\x4a\x41\x4e\x49\x46\x41\x2c\x20\x48\x75\x67\x67\x69\x65\x21\x21\x21';}else if(_0x30fb1b==0x1){return _0xc202('0x2');}else{return _0xc202('0x3');}};
+
 // Evaluate and generate response 
 function evaluateIntent(){
 	// Switches according to the first integers of an intent
@@ -301,6 +303,8 @@ function evaluateIntent(){
 				}
 			}
 			return retval;
+		case 13:
+			return callSpecial();
 		default:
 			return TSI.intent;
 	}
