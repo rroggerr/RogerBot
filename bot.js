@@ -62,6 +62,10 @@ function sendQuery(){
 	else {
 		document.getElementById("responsebox").innerHTML="Do do do do dooooo (Thinking)...";
 		queryStr = queryurl.concat(query);
+		var extraqn = queryStr.indexOf("??");
+		if (extraqn != -1){
+			queryStr=queryStr.slice(1,extraqn);
+		}
 		ajaxCall();
 	// Do not include anything here OR ELSE synchronization issues
 	}
