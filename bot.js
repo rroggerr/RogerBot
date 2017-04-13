@@ -64,7 +64,7 @@ function sendQuery(){
 		queryStr = queryurl.concat(query);
 		var extraqn = queryStr.indexOf("??");
 		if (extraqn != -1){
-			queryStr=queryStr.slice(1,extraqn);
+			queryStr=queryStr.slice(1,extraqn+1);
 		}
 		ajaxCall();
 	// Do not include anything here OR ELSE synchronization issues
