@@ -1,3 +1,11 @@
+ // ------------- Rogerbot ------------
+ // 	This is basically the Javascript that handles all the responses from the LUIS APIs
+ //
+ //
+ // -----------------------------------
+
+
+
 //  ---------- Housekeeping Stuff -------
 window.onload = function(){
 	checkCookie();
