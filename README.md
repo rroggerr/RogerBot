@@ -11,7 +11,7 @@ Credits to the Microsoft LUIS cloud service where you can train it to understand
 
 Also check out my Javascript on Github if you want to learn more about it! The user interface is hosted on my undergrad school server http://www.student.cs.uwaterloo.ca/~rgeng/
 
-* The index.html page is only added here as a reference, for the up-to-date version, refer to my uwaterloo website
 * RogerBot does not collect any personal information
 
 Update Mar 22 2017: Rogerbot just got a new home on Github! Previously hosted on the uwaterloo server space.
+Upadte May 3 2017: Since my school student website got shut down for some reason, Rogerbot is now hosted on my github pages https://rroggerr.github.io/RogerBot
